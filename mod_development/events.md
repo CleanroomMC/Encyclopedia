@@ -32,4 +32,4 @@
 		- Technically a mod can implement their own buses, but I have never seen one.
 		- Call `register` on any EventBuses and pass through either a class or an object that you want the buses to fire events to. 
 			- **Class = static methods accepted only.**
-			- **Object = member methods accepted only**
+			- **Object = member methods accepted only.**
