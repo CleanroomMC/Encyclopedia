@@ -5,7 +5,7 @@
 	
 - FMLEvents are events for different aspects of mod loading.
 	1. `FMLFingerprintViolationEvent`: fires when the mod that is running has mismatched fingerprints.
-	2. `FMLInterModComms$IMCEvent`: fires between `FMLInitializationEvent` and `FMLPostInitializationEvent`, for modders to receive their InterModComms messages.
+	2. `FMLInterModComms$IMCEvent`: fires between `FMLInitializationEvent` and `FMLPostInitializationEvent`, for modders to receive their `InterModComms` messages.
 	3. `FMLModDisabledEvent`: fires when your mod is disabled for any reason.
 	4. `FMLModIdMappingEvent`: fires when ID mappings have changed when loading into a world.
 
