@@ -2,16 +2,16 @@
 - `PlayerDestroyItemEvent` is fired when a player destroys an item.
 
 #### Hooks
-1. PlayerControllerMP#onPlayerDestroyBlock(BlockPos)
-2. PlayerControllerMP#processRightClick(EntityPlayer, World, EnumHand)
-3. PlayerControllerMP#processRightClickBlock(EntityPlayerSP, WorldClient, BlockPos, EnumFacing, Vec3d, EnumHand)
-4. EntityPlayer#attackTargetEntityWithCurrentItem(Entity)
-5. EntityPlayer#damageShield(float)
-6. EntityPlayer#interactOn(Entity, EnumHand)
-7. ForgeHooks#getContainerItem(ItemStack)
-8. PlayerInteractionManager#processRightClick(EntityPlayer, World, ItemStack, EnumHand)
-9. PlayerInteractionManager#processRightClickBlock(EntityPlayer, World, ItemStack, EnumHand, BlockPos, EnumFacing, float, float, float)
-10. PlayerInteractionManager#tryHarvestBlock(BlockPos)
+1. `PlayerControllerMP#onPlayerDestroyBlock(BlockPos)`
+2. `PlayerControllerMP#processRightClick(EntityPlayer, World, EnumHand)`
+3. `PlayerControllerMP#processRightClickBlock(EntityPlayerSP, WorldClient, BlockPos, EnumFacing, Vec3d, EnumHand)`
+4. `EntityPlayer#attackTargetEntityWithCurrentItem(Entity)`
+5. `EntityPlayer#damageShield(float)`
+6. `EntityPlayer#interactOn(Entity, EnumHand)`
+7. `ForgeHooks#getContainerItem(ItemStack)`
+8. `PlayerInteractionManager#processRightClick(EntityPlayer, World, ItemStack, EnumHand)`
+9. `PlayerInteractionManager#processRightClickBlock(EntityPlayer, World, ItemStack, EnumHand, BlockPos, EnumFacing, float, float, float)`
+10.`PlayerInteractionManager#tryHarvestBlock(BlockPos)`
 
 #### Characteristics
   1. Event is not cancellable.
