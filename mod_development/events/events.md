@@ -10,11 +10,23 @@
 	4. `FMLModIdMappingEvent`: fires when ID mappings have changed when loading into a world.
 
 - FMLStateEvents (extends FMLEvent) specifically depicts different phases of the FML lifecycle.
-	1. `FMLConstructionEvent`: fires when Forge finishes constructing mods, annotations, mod lists are ready to be queried here.
-	2. `FMLPreInitializationEvent`: fires when Forge is ready to start initializing mods, you can again query annotations once again, and see where different files related to your mod would situate (e.g. config files).
-	3. `FMLInitializationEvent`: fires after registry events are fired, game objects largely is available in this event. Hence a lot of OreDictionary activity is done here.
-	4. `FMLPostInitializationEvent`: fires after `FMLInitializationEvent` is dispatched to all mods, to consolidate any manipulations the mods have made.
-	5. `FMLLoadCompleteEvent`: fires straight before the main menu shows up, mods like JustEnoughItem does all their calculations here, it is the last event in the loading FML lifecycle.
+
+- Initial Loading Stages:
+  1. `FMLConstructionEvent`: fires when Forge finishes constructing mods, annotations, mod lists are ready to be queried here.
+  2. `FMLPreInitializationEvent`: fires when Forge is ready to start initializing mods, you can again query annotations once again, and see where different files related to your mod would situate (e.g. config files).
+  3. `FMLInitializationEvent`: fires after registry events are fired, game objects largely is available in this event. Hence a lot of OreDictionary activity is done here.
+  4. `FMLPostInitializationEvent`: fires after `FMLInitializationEvent` is dispatched to all mods, to consolidate any manipulations the mods have made.
+  5. `FMLLoadCompleteEvent`: fires straight before the main menu shows up, mods like JustEnoughItem does all their calculations here, it is the last event in the loading FML lifecycle.
+
+- Server Loading Stages:
+  1. `FMLServerAboutToStartEvent`: fires after settings and properties are initialized
+  2. `FMLServerStartingEvent`: fires after worlds are loaded, custom commands and more can be done here
+  3. `FMLServerStartedEvent`: fires when the server is ready for players
+  
+- Server Stopping Stages:
+  1. `FMLServerStoppingEvent`: fires when shutdown is initiated
+  2. `FMLServerStoppedEvent`: fires before the last tick is ran, after this the shutdown will finish. On integrated servers the menu will be loaded after this
+     
 
 #### Listening to Events
 
