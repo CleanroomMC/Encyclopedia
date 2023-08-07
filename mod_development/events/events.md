@@ -19,13 +19,13 @@
   5. `FMLLoadCompleteEvent`: fires straight before the main menu shows up, mods like JustEnoughItem does all their calculations here, it is the last event in the loading FML lifecycle.
 
 - Server Loading Stages:
-  1. `FMLServerAboutToStartEvent`: fires after settings and properties are initialized
-  2. `FMLServerStartingEvent`: fires after worlds are loaded, custom commands and more can be done here
-  3. `FMLServerStartedEvent`: fires when the server is ready for players
+  1. `FMLServerAboutToStartEvent`: fires after settings and properties are initialized.
+  2. `FMLServerStartingEvent`: fires after worlds are loaded, custom commands and more can be done here.
+  3. `FMLServerStartedEvent`: fires when the server is ready for players.
   
 - Server Stopping Stages:
-  1. `FMLServerStoppingEvent`: fires when shutdown is initiated
-  2. `FMLServerStoppedEvent`: fires before the last tick is ran, after this the shutdown will finish. On integrated servers the menu will be loaded after this
+  1. `FMLServerStoppingEvent`: fires when shutdown is initiated.
+  2. `FMLServerStoppedEvent`: fires before the last tick is ran, after this the shutdown will finish. On integrated servers the menu will be loaded after this.
      
 
 #### Listening to Events
