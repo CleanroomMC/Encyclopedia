@@ -1,7 +1,6 @@
-## Events
 - Events are the backbone of Forge's modding ecosystem, there are two major event types.
-	- FMLEvent
-	- Event
+	- `FMLEvent`
+	- `Event`
 	
 - FMLEvents are events for different aspects of mod loading.
 	1. `FMLFingerprintViolationEvent`: fires when the mod that is running has mismatched fingerprints.
@@ -33,15 +32,90 @@
 - Different event types have their own ways of being listened to and unique ways of being posted.
 
 - FMLEvents are listened to by having the `@EventHandler` annotation on methods within `@Mod` annotated classes. These must be member methods. **These listeners are called reflectively**
+??? abstract "Example"
+	```java title="ExampleClass.java"
+	@Mod(modid = "modid", name = "Mod Name", version = "1.0")
+	public class ExampleClass {
+
+		@EventHandler
+		public void runOnPreInit(FMLPreInitializationEvent event) {
+			// This block of code will run when FMLPreInitializationEvent is happening
+		}
+
+	}
+	```
 - Other types of events are more flexible in how they're being registered. **These listeners are called natively**
 	1. Annotation Magic: `@EventBusSubscriber` class level annotation
 		- These classes must withhold from being loaded before annotations are processed.
 		- If it is annotated with `@Mod`, the `modid` argument isn't needed, otherwise it is needed for recognition sake.
 		- Any methods in here that wants to listen to an event **must** be static.
+		??? abstract "Example"
+			```java title="ExampleClass.java"
+			@EventBusSubscriber(modid = "modid")
+			public class ExampleClass {
+
+				@SubscribeEvent
+				public static void thisIsAEventListener(Event event) {
+					// This block of code will run when whichever Event is denoted in the argument
+				}
+
+			}
+			```
+
 	2. 	EVENT_BUS interaction:
 		- Events are ran on different event buses, Forge originally wanted to differentiate events properly, then realised that EventBuses are really confusing.
 		- All the EventBuses can be found in `MinecraftForge.class`, those being `EVENT_BUS`, `TERRAIN_GEN_BUS` and `ORE_GEN_BUS`.
-		- Technically a mod can implement their own buses, but I have never seen one.
+		- Technically a mod can implement their own buses, but there doesn't seem to be any in the wild.
 		- Call `register` on any EventBuses and pass through either a class or an object that you want the buses to fire events to. 
 			- **Class = static methods accepted only.**
+			??? abstract "Example"
+				```java title="StaticExample.java"
+				public class StaticExample {
+
+					public static void register() {
+						MinecraftForge.EVENT_BUS.register(EventListener.class);
+					}
+
+					public static class EventListener {
+
+						@SubscribeEvent
+						public static void thisListenerWillRun(Event event) {
+							// This method is static
+							// This block of code will run when whichever Event is denoted in the argument
+						}
+
+						@SubscribeEvent
+						public void thisListenerWillNeverRun(Event event) {
+							// This method is not static
+						}
+
+					}
+
+				}
+				```
 			- **Object = member methods accepted only.**
+			??? abstract "Example"
+				```java title="MemberExample.java"
+				public class MemberExample {
+
+					public static void register() {
+						MinecraftForge.EVENT_BUS.register(new EventListener());
+					}
+
+					public static class EventListener {
+
+						@SubscribeEvent
+						public void thisListenerWillRun(Event event) {
+							// This method is not static
+							// This block of code will run when whichever Event is denoted in the argument
+						}
+
+						@SubscribeEvent
+						public static void thisListenerWillNeverRun(Event event) {
+							// This method is static
+						}
+
+					}
+
+				}
+				```

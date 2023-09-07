@@ -1,1 +1,0 @@
-[![Gliese 832 c's Minecraft Technical Metric System](https://user-images.githubusercontent.com/55159077/167264687-0a35853f-3e7c-4bbb-9044-6811ecd891c7.png)](https://github.com/Gliese-832-c/minecraft-technical-metric-system)
