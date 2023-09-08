@@ -1,0 +1,86 @@
+site_name: Cleanroom Encyclopedia
+repo_url: https://github.com/CleanroomMC/Encyclopedia
+repo_name: CleanroomMC/Encyclopedia
+
+nav:
+  - Home: index.md
+  - About: about.md
+  - Mod Development:
+    - Debugging: mod-development/debugging.md
+    - Sidedness: mod-development/sidedness.md
+    - Behaviour:
+      - Neighbours: mod-development/behaviour/neighbours.md
+    - Event:
+      - Overview: mod-development/event/overview.md
+      - PlayerDestroyItemEvent: mod-development/event/player-destroy-item-event.md
+    - Game Object:
+      - Sound:
+        - Play Sound: mod-development/game-object/sound/play.md
+    - Rendering:
+      - Colouring Blocks and Items: mod-development/rendering/colouring-blocks-and-items.md
+  - Proposal:
+    - Standard:
+      - Minecraft Technical Metric System: proposal/standard/mtms.md
+
+theme:
+  name: material
+  custom_dir: theme
+  language: en
+  logo: assets/icon.png
+  favicon: assets/icon.png
+  font:
+    text: Ubuntu
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: Switch to Dark Mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: Switch to Light Mode
+  features:
+    - header.autohide
+    - announce.dismiss
+    - search.highlight
+    - search.share
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.snippets:
+      url_download: true
+
+# extra:
+#    alternate:
+#      - name: English
+#        link: /en/
+#        lang: en
+#      - name: 繁體中文
+#        link: /tw/
+#        lang: zh-TW
+#     - name: 简体中文
+#       link: /cn/
+#       lang: zh

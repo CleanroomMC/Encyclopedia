@@ -1,4 +1,3 @@
-## Playing Sounds
 - There are numerous of ways to play a sound within Minecraft.
 - The methods of doing so frequently get mixed up as the overload parameters are very alike.
 - They also differ depending on which logical side you are on, and how you want the sound to be perceived.
