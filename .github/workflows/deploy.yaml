@@ -15,5 +15,5 @@ jobs:
           python-version: 3.x
           cache: 'pip'
       - run: |
-        pip install -r dependencies.txt
-        mkdocs gh-deploy --force
+          pip install -r dependencies.txt
+          mkdocs gh-deploy --force
