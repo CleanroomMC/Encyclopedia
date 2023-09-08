@@ -24,7 +24,7 @@ nav:
 
 theme:
   name: material
-  custom_dir: theme
+  # custom_dir: theme
   language: en
   logo: assets/icon.png
   favicon: assets/icon.png
