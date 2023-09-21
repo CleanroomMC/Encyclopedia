@@ -19,6 +19,8 @@ nav:
     - Mixin:
       - Preface: mod-development/mixin/preface.md
       - MixinBooter: mod-development/mixin/mixinbooter.md
+      - Annotation:
+        - "@Shadow": mod-development/mixin/annotation/shadow.md
       - Environment:
         - Registration: mod-development/mixin/environment/registration.md
         - Configuration: mod-development/mixin/environment/configuration.md
@@ -63,6 +65,7 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - def_list
   - attr_list
   - md_in_html
   - footnotes
