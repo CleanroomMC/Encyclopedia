@@ -3,13 +3,13 @@
 ### ^^Arguments^^
 `remap`
 
-:   `[Optional Boolean, default value: true`
+:   `[Optional Boolean, default value: true]`
 
     The annotation processor will skip this if this is false. With the refmap skipping over this member. This is useful for members originating from mods and not Vanilla Minecraft.
 
 `aliases`
 
-:   `[Optional String Array, default value: {}`
+:   `[Optional String Array, default value: {}]`
 
     This can be populated with other aliases, particularly useful when shadowing synthetic members, or if the member is known to have name-changes at runtime from other sources of transformation
 
