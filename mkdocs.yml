@@ -16,6 +16,9 @@ nav:
     - Game Object:
       - Sound:
         - Play Sound: mod-development/game-object/sound/play.md
+    - Mixin:
+      - Preface: mod-development/mixin/preface.md
+      - MixinBooter: mod-development/mixin/mixinbooter.md
     - Rendering:
       - Colouring Blocks and Items: mod-development/rendering/colouring-blocks-and-items.md
   - Proposal:
