@@ -20,6 +20,7 @@ nav:
       - Preface: mod-development/mixin/preface.md
       - MixinBooter: mod-development/mixin/mixinbooter.md
       - Environment:
+        - Registration: mod-development/mixin/environment/registration.md
         - Configuration: mod-development/mixin/environment/configuration.md
     - Rendering:
       - Colouring Blocks and Items: mod-development/rendering/colouring-blocks-and-items.md

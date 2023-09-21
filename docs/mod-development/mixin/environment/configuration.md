@@ -50,7 +50,7 @@ All the mixin configurations and the purposes of them is-as follows:
         - Default value: `0`
         - Acceptable values: From `0` to `5`
     - `defaultGroup`, `namespace`, `injectionPoints`, `dynamicSelectors` all are properties to do with the `InjectionPoint` and `ITargetSelectorDynamic` implementations. Their javadoc explains it the most in-depth.
-- `overwrites`
+- `overwrites`: Overwrite Options. `[Optional: Json Object]`
     - `conformVisibility`: Whether the overwrite conforms the original method's visibility. `[Optional: Boolean]`
         - Default value: `false`
     - `requireAnnotations`: Allows overwrites to be performed without the `@Overwrite` annotation labelling the method. `[Optional: Boolean]`
