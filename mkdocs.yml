@@ -30,6 +30,8 @@ nav:
       - ModularUI:
           - Intro: mod-wiki/modularui/intro.md
           - Getting Started: mod-wiki/modularui/getting_started.md
+          - Client GUI tutorial: mod-wiki/modularui/client_gui_tutorial.md
+          - Synced GUI tutorial: mod-wiki/modularui/synced_gui_tutorial.md
   - Proposal:
     - Standard:
       - Minecraft Technical Metric System: proposal/standard/mtms.md
