@@ -6,8 +6,9 @@ In this tutorial we will open a GUI on right clicking a block.
 ## Creating the Block
 At the top we subscribe to some events to register the block and the item form.
 Whats interesting for us is the method at the bottom `onBlockActivated()`. This is called when the block is right clicked.
-Inside we first check if the method is called on server side. This is important. **Synced GUI's MUST be opened ONLY from server side!**.
-Then we simply call `GuiInfos.TILE_ENTITY.open(playerIn, worldIn, pos);`. This will find the tile entity at the blocks position and tries to open the GUI on client and server side.
+Inside we first check if the method is called on server side. This is important. **Synced GUI's MUST be opened ONLY from 
+server side!**. Then we simply call `GuiInfos.TILE_ENTITY.open(playerIn, worldIn, pos);`. This will find the tile entity 
+at the blocks position and tries to open the GUI on client and server side.
 ```java
 public class TutorialBlock extends Block implements ITileEntityProvider {
 
@@ -18,7 +19,7 @@ public class TutorialBlock extends Block implements ITileEntityProvider {
         ResourceLocation rl = new ResourceLocation("tutorial_mod", "test_block");
         testBlock.setRegistryName(rl);
         testItemBlock.setRegistryName(rl);
-        GameRegistry.registerTileEntity(TestTile.class, rl);
+        GameRegistry.registerTileEntity(TutorialTile.class, rl);
     }
 
     @SubscribeEvent
@@ -40,7 +41,7 @@ public class TutorialBlock extends Block implements ITileEntityProvider {
     @Nullable
     @Override
     public TileEntity createNewTileEntity(@NotNull World worldIn, int meta) {
-        return new TestTile();
+        return new TutorialTile();
     }
 
     @Override
@@ -54,9 +55,11 @@ public class TutorialBlock extends Block implements ITileEntityProvider {
 ```
 
 ## Creating the TileEntity
-This is fairly simple. Extend `TileEntity` and implement `IGuiHolder`. Then override `buildUI()`. You can also override `createScreen()` to create a custom screen, but most of the time you wont need that.
+This is fairly simple. Extend `TileEntity` and implement `IGuiHolder`. Then override `buildUI()`. You can also override 
+`createScreen()` to create a custom screen, but most of the time you won't need that.
 
-Inside the `buildUI()` is where the fun stuff happens. The method is called on both client and server side, but only on client side the widgets are kept. But on both sides the syncing information is kept.
+Inside the `buildUI()` is where the fun stuff happens. The method is called on both client and server side, but only on 
+client side the widgets are kept. But on both sides the syncing information is kept.
 Here we currently only create a panel and attach the player inventory. **The GUI must be synced for ANY slots to work!**
 ```java
 public class TutorialTile extends TileEntity implements IGuiHolder {
@@ -73,7 +76,9 @@ Our GUI now looks like this. We have a correctly positioned player inventory at 
 ![grafik](https://github.com/CleanroomMC/ModularUI/assets/45517902/affc34c2-e89a-4f5a-9010-8ac352145cc9)
 
 ## Syncing custom values
-Now let's add a progress bar to the GUI. For that we first make the tile ticking. Inside `update()` we upadte the progress variable, but only on server side to simulate a working machine (and to showcase syncing). Once the progress reaches 100 ticks it's reset to 0. 100 ticks equals 5 seconds.
+Now let's add a progress bar to the GUI. For that we first make the tile ticking by implementing `ITickable` into the 
+`TutorialTile`. Inside `update()` we upadte the progress variable, but only on server side to simulate a working machine
+(and to showcase syncing). Once the progress reaches 100 ticks it's reset to 0. 100 ticks equals 5 seconds.
 ```java
 private int progress = 0;
 
@@ -102,8 +107,12 @@ The whole syncing information is in this line:
 ```java
 .value(new DoubleSyncValue(() -> this.progress / 100.0, val -> this.progress = (int) (val * 100))));
 ```
-`value()` accepts an instance of `IDoubleValue`. If we want the value to be synced we need to use `DoubleSyncValue`. The constructor needs to arguments. A getter as `DoubleSupplier` and a setter as `DoubleConsumer`. The progress widget wants a double value between 0 and 1 so we need to divide by the maximum value (100). The getter is called on server side on compared by a cached value to figure out if it needs to be synced.
-On client side the setter is called to update our progress field on client side. But since only the widget needs that value and nothing else we could also pass in `null` for the second argument (the DoubleSyncValue caches it's own progress value based on the passed getter).
+`value()` accepts an instance of `IDoubleValue`. If we want the value to be synced we need to use `DoubleSyncValue`. The
+constructor needs to arguments. A getter as `DoubleSupplier` and a setter as `DoubleConsumer`. The progress widget wants
+a double value between 0 and 1 so we need to divide by the maximum value (100). The getter is called on server side on 
+compared by a cached value to figure out if it needs to be synced. On client side the setter is called to update our 
+progress field on client side. But since only the widget needs that value and nothing else we could also pass in `null` 
+for the second argument (the DoubleSyncValue caches it's own progress value based on the passed getter).
 
 You can disable JEI in your synced GUI by adding this line into your `buildUI()` method
 ```java

@@ -24,6 +24,8 @@ implementation 'curse.maven:modularui-624243:4786372-sources-4786373'
 - `4779301` is the `dev` file id (for version 2.2.3)
 - `4779302` is the `sources` file id (for version 2.2.3)
 
+By including the sources in your dependency declaration you'll get access to the real uncompiled code with javadocs.
+
 Make sure to use the latest version!
 
 ## Development Tools
@@ -45,6 +47,10 @@ You can open one by calling `ClientGUI.open(ModularScreen, JeiSettings)`.
 `JeiSettings` can be omitted by an overloaded method. Client only GUIs don't display jei on the side by default.
 You can change that by creating your own `JeiSettings` instance. The `ModularScreen` should be a new instance.
 
+Go [here](client_gui_tutorial.md) to get started on creating a client GUI. Even if you are looking into making a synced 
+GUI, I still recommend
+checking it out as it contains some information which is useful for both cases.
+
 ### Synced GUI
 
 Synced GUIs are much more complicated to open. The most important thing is that you must only open synced GUIs
@@ -58,3 +64,5 @@ That's why ModularUI provides two `GuiInfo`s for that. One for main hand and one
 ModularUI provides some default `GuiInfo`s at `GuiInfos`. If you want to create your own `GuiInfo`, take a look at
 `GuiInfo.builder()`.
 Now that you have your `GuiInfo`, simply call `open()` with your needed parameters.
+
+Go [here](synced_gui_tutorial.md) to get started on creating a synced GUI.
