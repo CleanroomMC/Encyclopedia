@@ -34,6 +34,7 @@ nav:
           - Synced GUI tutorial: mod-wiki/modularui/synced_gui_tutorial.md
           - Sizing and Positioning: mod-wiki/modularui/sizing_and_positioning.md
           - Framework: mod-wiki/modularui/framework.md
+          - Themes: mod-wiki/modularui/themes.md
   - Proposal:
     - Standard:
       - Minecraft Technical Metric System: proposal/standard/mtms.md
