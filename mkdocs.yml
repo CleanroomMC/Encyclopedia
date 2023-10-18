@@ -35,6 +35,11 @@ nav:
           - Sizing and Positioning: mod-wiki/modularui/sizing_and_positioning.md
           - Framework: mod-wiki/modularui/framework.md
           - Themes: mod-wiki/modularui/themes.md
+          - Json:
+              - Drawables: mod-wiki/modularui/json/drawable.md
+              - Color: mod-wiki/modularui/json/color.md
+              - Alignment: mod-wiki/modularui/json/alignment.md
+              - Theme: mod-wiki/modularui/json/theme.md
   - Proposal:
     - Standard:
       - Minecraft Technical Metric System: proposal/standard/mtms.md

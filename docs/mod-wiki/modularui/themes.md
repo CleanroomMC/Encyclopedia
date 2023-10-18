@@ -37,6 +37,8 @@ There are two ways to set a theme in a GUI.
 
 If both methods are used, the first will always take priority.
 
+Checkout [this page](json/theme.md) to find out what properties you can add to the builder.
+
 ## For resource packs
 
 First create new file in your resource pack at `assets/modularui/themes.json`. You can replace `modularui` with any
@@ -71,66 +73,4 @@ Inside the curly brackets we can set themes for screens. The format is `"screen_
 So in the example above `modularui:test` the full screen name and `vanilla_dark` is the theme name (which we defined
 before).
 
-## Creating themes
-
-Here we will take a look what the theme file can look like. If you are a mod developer you can directly translate to
-your `JsonBuilder`.
-
-Let's look at an example. This is what the default vanilla theme as a json file would look like.
-
-```json
-{
-   "parent": "DEFAULT",
-   "background": null,
-   "hoverBackground": null,
-   "color": "#FFFFFFFF",
-   "textColor": "#FF404040",
-   "textShadow": false,
-   "panel": {
-      "background": {
-         "type": "texture",
-         "id": "vanilla_background"
-      }
-   },
-   "button": {
-      "background": {
-         "type": "texture",
-         "id": "vanilla_button"
-      },
-      "textColor": "#FFFFFFFF",
-      "textShadow": true
-   },
-   "itemSlot": {
-      "background": {
-         "type": "texture",
-         "id": "slot_item"
-      },
-      "slotHoverColor": "#60FFFFFF"
-   },
-   "fluidSlot": {
-      "background": {
-         "type": "texture",
-         "id": "slot_fluid"
-      },
-      "slotHoverColor": "#60FFFFFF"
-   },
-   "textField": {
-      "textColor": "#FFFFFFFF",
-      "markedColor": "#FF2F72A8"
-   },
-   "toggleButton": {
-      "background": {
-         "type": "texture",
-         "id": "vanilla_button"
-      },
-      "textColor": "#FFFFFFFF",
-      "textShadow": true,
-      "selectedBackground": {
-         "type": "texture",
-         "id": "slot_item"
-      },
-      "selectedHoverBackground": null,
-      "selectedColor": "0xFFBBBBBB"
-   }
-}
-```
+Checkout [this page](json/theme.md) to find out how to write themes.
