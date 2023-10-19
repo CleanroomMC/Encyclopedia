@@ -182,3 +182,83 @@ can also have any style property like `color` and `shadow`.
     ```
 
 As you can see in the example above you can also start a string with `I18n:` to make it translated.
+
+## Item
+
+Type name: `item`
+
+- `item`: The format is `mod:item_id:meta` where meta is optional
+- `nbt`: nbt data (untested)
+
+!!! Example
+    ```json
+    {
+      "background": {
+        "type": "item",
+        "item": "minecraft:diamond"
+      }
+    }
+    ```
+
+## Icon
+
+An icon is a drawable wrapper which can draw a drawable at a fixed size.
+
+Type name: `icon`
+
+Properties:
+
+- `drawable` or `icon`: The wrapped drawable. (Required)
+- `width` or `w`: The width to render the drawable at.
+- `height` or `h`: The height to render the drawable at.
+- `autoWidth` and `autoHeight`: True if the width/height should match the render size (how normal drawables work).
+- `autoSize`: True if the width and height should match the render size (how normal drawables work). (Default is true)
+- `alignment` or `align`: The alignment of the drawable in the render size. (see [alignment](alignment.md)) (default is center)
+
+You can also set margins. But they only work if the width (for left and right) or the height (for top and bottom) is set to auto.
+Multiple margins can be combined.
+
+- `margin`: The margin on all edges
+- `marginHorizontal` and `marginVertical`: The margin on horizontal (left and right) or vertical (top and bottom) edges
+- `marginTop`, `marginBottom`, `marginLeft`, `marginRight`; The margin of each edge
+
+!!! Example
+    ```json
+    {
+      "background": {
+        "type": "icon",
+        "drawable": {
+          "type": "...",
+          "...": "..."
+        },
+        "width": 18,
+        "height": 18
+      }
+    }
+    ```
+
+## Drawable array
+
+A drawable can also be multiple drawable. You can do that by using square brackets `[]` instead of curly brackets `{}`.
+And inside there you just define multiple drawable objects
+
+!!! Example
+    ```json
+    {
+      "background": [
+        {
+          "type": "...",
+          "...": "..."
+        },
+        {
+          "type": "...",
+          "...": "..."
+        },
+        {
+          "type": "...",
+          "...": "..."
+        }
+        
+      ]
+    }
+    ```

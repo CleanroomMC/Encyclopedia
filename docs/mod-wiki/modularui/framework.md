@@ -56,7 +56,17 @@ This class has a lot of useful methods, too many to list them all. But you can t
 to structure it and make it clean.
 
 ## WindowManager
+
 Keeps track of all panels and the main panels. Handles opening and closing panels
 
 ## GuiSyncManager
+
 Manages sync values. This is the only class (with `ModularContainer`) that exists on client and server side.
+
+## GuiScreenWrapper
+
+This is the minecraft `GuiContainer` class which wraps the `ModularScreen`. This is an internal class.
+
+## ModularContainer
+
+This is the minecraft `Container` class. This is an internal class.

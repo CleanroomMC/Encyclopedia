@@ -8,7 +8,7 @@ The format is `AARRGGBB`. If `A` (alpha) is not set, it defaults to full opacity
 !!! Example
     ```json
     {
-        "color": "#FFFFFF"
+      "color": "#FFFFFF"
     }
     ```
 
