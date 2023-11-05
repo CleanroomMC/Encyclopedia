@@ -26,6 +26,20 @@ nav:
         - Configuration: mod-development/mixin/environment/configuration.md
     - Rendering:
       - Colouring Blocks and Items: mod-development/rendering/colouring-blocks-and-items.md
+  - Mod Wikis:
+      - ModularUI:
+          - Intro: mod-wiki/modularui/intro.md
+          - Getting Started: mod-wiki/modularui/getting_started.md
+          - Client GUI tutorial: mod-wiki/modularui/client_gui_tutorial.md
+          - Synced GUI tutorial: mod-wiki/modularui/synced_gui_tutorial.md
+          - Sizing and Positioning: mod-wiki/modularui/sizing_and_positioning.md
+          - Framework: mod-wiki/modularui/framework.md
+          - Themes: mod-wiki/modularui/themes.md
+          - Json:
+              - Drawables: mod-wiki/modularui/json/drawable.md
+              - Color: mod-wiki/modularui/json/color.md
+              - Alignment: mod-wiki/modularui/json/alignment.md
+              - Theme: mod-wiki/modularui/json/theme.md
   - Proposal:
     - Standard:
       - Minecraft Technical Metric System: proposal/standard/mtms.md
