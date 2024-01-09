@@ -63,6 +63,10 @@ We have located and fixed two mods crash by this change (Lag Goggles and ZenScri
 It was a JDK change made for nest-based access control, [here](https://openjdk.org/jeps/181)'s the JEP link. 
 
 Some mods' ASM code rely on counting amount of `invokespecial` or `invokevirtual`, they may encounter crash in Cleanroom. Currently only Advanced Rocketry is affect by this and has been patched.
+#### 2.10 Mixin's `@Accessor` may crash your game
+Since newer JVM restricted its access control, it will refuse to set `final` field even through Mixin accessor. Adding a `@Mutable` on same accessor method could remove target's `final` modifier and fix this.
+
+Adding AT(Access Transformer) works too, but on vanilla fields. We have added some of them manually in *Fugue* to fix a few dead mods.
 ### 3 New Version of Libraries
 #### 3.1 New Mixin and ModifyArgs
 - You do not need to bootstrap Mixin anymore, and should not do this.
