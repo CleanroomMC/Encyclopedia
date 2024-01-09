@@ -32,7 +32,7 @@ We wrote a `JavaxTransformer` to remap every old `javax` reference to `jakarta`,
 #### 2.3 ScriptEngineManager
 Java removed the default Nashorn JS engine since Java 15, but we have included its standalone version back.
 
-The only problem is calling `new ScriptEngineManager()` may yield errors since Nashorn is in `AppClassLoader`, please replace it with `new CleanroomScriptEngineManager()`.
+The only problem is calling `new ScriptEngineManager(null)` may yield errors since it will search script engine in a wrong classloader. Please replace it with `new CleanroomScriptEngineManager()` or `new ScriptEngineManager()`.
 
 We also have a `ScriptEngineTransformer` to patch that.
 #### 2.4 Malformed UUID
@@ -55,6 +55,14 @@ Newer Java now has more strict access control around final field, even the acces
 `Unsafe` is the official way to set final fields now, but we are considering third-party libraries like [Mirror](https://github.com/Moderocky/Mirror), [Narcissus](https://github.com/toolfactory/narcissus) and [JVM-Driver](https://github.com/toolfactory/jvm-driver).
 
 We also made a `ReflectionFieldTransformer` to redirect every `set()` or `get()` of fields to `Unsafe`, but this will be removed once the community is ready.
+#### 2.8 `itf` of `MethodInsnNode`
+Java 8 doesn't care if an interface status in method calling is true or not. Some older version of ASM5 doesn't set it correctly too. All these made some ASM-involved mods crashing on CLeanroom.
+
+We have located and fixed two mods crash by this change (Lag Goggles and ZenScript), but you should check your ASM code when porting.
+#### 2.9 `private` methods calls shouldn't use `invokespecial` now
+It was a JDK change made for nest-based access control, [here](https://openjdk.org/jeps/181)'s the JEP link. 
+
+Some mods' ASM code rely on counting amount of `invokespecial` or `invokevirtual`, they may encounter crash in Cleanroom. Currently only Advanced Rocketry is affect by this and has been patched.
 ### 3 New Version of Libraries
 #### 3.1 New Mixin and ModifyArgs
 - You do not need to bootstrap Mixin anymore, and should not do this.
@@ -71,7 +79,7 @@ It's always latest(currently 33.0) now. Some mods will need to add `Runnable::ru
 Fastutil doesn't allow setting certain hash set's load factor to `1.0` anymore, always check the latest javadoc when crashed!
 #### 3.5 ICU4J
 We use upstream version of ICU4J for a working line breaking engine, mods should use `net.minecraft.client.gui.FontRenderer#BREAK_ITERATOR` too for better internationalization.
-#### 3.6 OSHI - Operating System and Hardware Information
+#### 3.6 OSHI
 This library is updated too, some debug screen mod should update their way to get CPU info.
 ### 4 Scala and Kotlin
 #### 4.1 Scala
