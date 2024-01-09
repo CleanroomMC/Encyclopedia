@@ -7,7 +7,7 @@ This is the official repository for [CleanroomMC's Encyclopedia (aka Wikipedia)]
 - Requires [pip](https://pypi.org/project/pip/)
 
 ```cmd
->pip install -r requirements.txt
+>pip install -r dependencies.txt
 >mkdocs serve
 ```
 
