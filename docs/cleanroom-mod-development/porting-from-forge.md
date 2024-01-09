@@ -110,7 +110,7 @@ But if we ship Scala 2.12, none of current mods will launch. We are planning to 
 
 For now, Scala mods can only develop under Forge with Java 8.
 
-### 4.2 Kotlin
+### Kotlin
 Kotlin is easier compare to Scala - it was solely shipped by Forgelin in whole 1.12 life era. We have made a Forgelin shipping 21-compatible Kotlin 1.9.21, but some older mods are having problem running on newer Kotlin.
 
 Mod porting is not begin yet, so old Forgelin is still necessary for old modpacks.
