@@ -5,27 +5,29 @@ repo_name: CleanroomMC/Encyclopedia
 nav:
   - Home: index.md
   - About: about.md
-  - Mod Development:
-    - Debugging: mod-development/debugging.md
-    - Sidedness: mod-development/sidedness.md
+  - Cleanroom Mod Development:
+    - Porting from Forge: cleanroom-mod-development/porting-from-forge.md
+  - Forge Mod Development:
+    - Debugging: forge-mod-development/debugging.md
+    - Sidedness: forge-mod-development/sidedness.md
     - Behaviour:
-      - Neighbours: mod-development/behaviour/neighbours.md
+      - Neighbours: forge-mod-development/behaviour/neighbours.md
     - Event:
-      - Overview: mod-development/event/overview.md
-      - PlayerDestroyItemEvent: mod-development/event/player-destroy-item-event.md
+      - Overview: forge-mod-development/event/overview.md
+      - PlayerDestroyItemEvent: forge-mod-development/event/player-destroy-item-event.md
     - Game Object:
       - Sound:
-        - Play Sound: mod-development/game-object/sound/play.md
+        - Play Sound: forge-mod-development/game-object/sound/play.md
     - Mixin:
-      - Preface: mod-development/mixin/preface.md
-      - MixinBooter: mod-development/mixin/mixinbooter.md
+      - Preface: forge-mod-development/mixin/preface.md
+      - MixinBooter: forge-mod-development/mixin/mixinbooter.md
       - Annotation:
-        - "@Shadow": mod-development/mixin/annotation/shadow.md
+        - "@Shadow": forge-mod-development/mixin/annotation/shadow.md
       - Environment:
-        - Registration: mod-development/mixin/environment/registration.md
-        - Configuration: mod-development/mixin/environment/configuration.md
+        - Registration: forge-mod-development/mixin/environment/registration.md
+        - Configuration: forge-mod-development/mixin/environment/configuration.md
     - Rendering:
-      - Colouring Blocks and Items: mod-development/rendering/colouring-blocks-and-items.md
+      - Colouring Blocks and Items: forge-mod-development/rendering/colouring-blocks-and-items.md
   - Mod Wikis:
       - ModularUI:
           - Intro: mod-wiki/modularui/intro.md
