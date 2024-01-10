@@ -19,6 +19,7 @@ This casting is no longer feasible and will throw errors since Java 9. We wrote 
 
 ### javax to jakarta
 Java EE changed most of its namespace from `javax` to `jakarta` in Jakarta EE 9. javax packages affect by this change includes:
+
 - bind
 - xml
 - ws
