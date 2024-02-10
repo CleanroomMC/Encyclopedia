@@ -5,8 +5,9 @@ repo_name: CleanroomMC/Encyclopedia
 nav:
   - Home: index.md
   - About: about.md
-  - Cleanroom Mod Development:
-    - Porting from Forge: cleanroom-mod-development/porting-from-forge.md
+  - Cleanroom Loader Development:
+    - Mod:
+      - Porting from Forge: cleanroom-development/mod/porting-from-forge.md
   - Forge Mod Development:
     - Debugging: forge-mod-development/debugging.md
     - Sidedness: forge-mod-development/sidedness.md
